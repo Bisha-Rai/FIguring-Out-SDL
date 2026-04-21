@@ -16,7 +16,17 @@ int main(int argc,char* argv[])
    }
     while(run)
    {
-        
+        SDL_Event event; //creates an event name variable which can store input given
+        SDL_PollEvent(&event); //scanf of inputs
+        switch(event.type)//creating what input does using event as var and .typ to info what kind of input it is keydown keyup type
+        {
+            case SDL_QUIT:
+             run=false;
+             break;
+        }
    }
+   SDL_DestroyWindow(window);
+   SDL_DestroyRenderer(renderer);
+   SDL_Quit();
     return 0;
 }
